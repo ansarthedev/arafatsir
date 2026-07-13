@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ansar Ahmad | Senior Software Engineer &amp; Full Stack Developer</title>
+<meta name="description" content="Portfolio of Ansar Ahmad, a Senior Full Stack Software Engineer specializing in scalable web applications, modern UI/UX, and cloud-native architecture." />
+<meta name="keywords" content="software engineer, full stack developer, portfolio, web developer, UI UX designer" />
+<meta name="author" content="Ansar Ahmad" />
+
+<!-- Favicon -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>" />
+
+<!-- Google Fonts: Poppins -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+<!-- Bootstrap 5 CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+<!-- Custom Stylesheet -->
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- =========================================================
+     LOADING SCREEN
+     Shown while the page assets are loading, then fades out.
+========================================================= -->
+<div id="loader" class="loader">
+  <div class="loader-inner">
+    <span class="loader-logo">AA<span class="loader-dot">.</span></span>
+    <div class="loader-bar"><span></span></div>
+    <p class="loader-text">Loading experience...</p>
+  </div>
+</div>
+
+<!-- Scroll progress bar -->
+<div id="scroll-progress" class="scroll-progress"></div>
+
+<!-- Custom cursor + glow -->
+<div class="cursor-dot" id="cursor-dot"></div>
+<div class="cursor-glow" id="cursor-glow"></div>
+
+<!-- =========================================================
+     NAVBAR
+========================================================= -->
+<nav class="navbar navbar-expand-lg fixed-top custom-navbar" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="#home">Ansar<span class="text-gradient">Ahmad</span><span class="brand-dot">.</span></a>
+
+    <button class="navbar-toggler" type="button" id="navToggler" aria-label="Toggle navigation" aria-expanded="false">
+      <span class="toggler-bar"></span>
+      <span class="toggler-bar"></span>
+      <span class="toggler-bar"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+        <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+        <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        <li class="nav-item ms-lg-2">
+          <button id="darkModeToggle" class="theme-toggle" aria-label="Toggle light and dark mode">
+            <i class="fa-solid fa-sun"></i>
+            <i class="fa-solid fa-moon"></i>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- =========================================================
+     HERO SECTION
+========================================================= -->
+<header id="home" class="hero-section">
+  <div class="hero-bg-gradient"></div>
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- Floating decorative icons -->
+  <div class="floating-icons" aria-hidden="true">
+    <i class="fa-brands fa-html5 float-icon fi-1"></i>
+    <i class="fa-brands fa-css3-alt float-icon fi-2"></i>
+    <i class="fa-brands fa-js float-icon fi-3"></i>
+    <i class="fa-brands fa-python float-icon fi-4"></i>
+    <i class="fa-brands fa-git-alt float-icon fi-5"></i>
+    <i class="fa-brands fa-bootstrap float-icon fi-6"></i>
+  </div>
+
+  <div class="container hero-container">
+    <div class="row align-items-center gy-5">
+      <div class="col-lg-7 hero-text reveal-up">
+        <p class="hero-eyebrow"><span class="eyebrow-dot"></span> Welcome to my portfolio</p>
+        <h1 class="hero-title">
+          Hi, I'm <span class="text-gradient">Ansar Ahmad</span>
+        </h1>
+        <h2 class="hero-subtitle">
+          <span id="typed-text"></span><span class="typed-cursor">|</span>
+        </h2>
+        <p class="hero-desc">
+          I design and build fast, scalable, and beautifully crafted digital products —
+          partnering with startups and top tech teams to turn complex problems into
+          elegant, production-ready software.
+        </p>
+
+        <div class="hero-cta d-flex flex-wrap gap-3">
+          <a href="#contact" class="btn btn-hire ripple">Hire Me <i class="fa-solid fa-arrow-right ms-2"></i></a>
+          <a href="#" class="btn btn-resume ripple"><i class="fa-solid fa-download me-2"></i>Download Resume</a>
+        </div>
+
+        <div class="hero-social">
+          <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="Dribbble"><i class="fa-brands fa-dribbble"></i></a>
+        </div>
+      </div>
+
+      <div class="col-lg-5 text-center reveal-up" data-delay="200">
+        <div class="hero-image-wrap">
+          <div class="hero-image-glow"></div>
+          <div class="hero-image-placeholder">
+            <i class="fa-solid fa-user-tie"></i>
+          </div>
+          <div class="hero-badge hero-badge-1"><i class="fa-solid fa-code"></i> Clean Code</div>
+          <div class="hero-badge hero-badge-2"><i class="fa-solid fa-bolt"></i> 5+ Years</div>
+          <div class="hero-badge hero-badge-3"><i class="fa-solid fa-award"></i> Top Rated</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <a href="#about" class="scroll-indicator" aria-label="Scroll down">
+    <span>Scroll</span>
+    <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+  </a>
+</header>
+
+<!-- =========================================================
+     ABOUT SECTION
+========================================================= -->
+<section id="about" class="section about-section">
+  <div class="container">
+    <div class="text-center section-heading reveal-up">
+      <p class="section-tag">About Me</p>
+      <h2 class="section-title">Get To Know Me</h2>
+    </div>
+
+    <div class="row align-items-center gy-5">
+      <div class="col-lg-5 reveal-up">
+        <div class="about-image-wrap">
+          <div class="about-image-placeholder">
+            <i class="fa-solid fa-laptop-code"></i>
+          </div>
+          <div class="about-exp-card">
+            <h3>5+</h3>
+            <p>Years of Experience</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-7 reveal-up" data-delay="150">
+        <h3 class="about-heading">Senior Full Stack Engineer based in San Francisco, CA</h3>
+        <p class="about-text">
+          I'm a passionate software engineer with over five years of experience designing and
+          building high-performance web applications for startups and enterprise teams alike.
+          My focus is on writing clean, maintainable code while crafting interfaces that feel
+          intuitive and delightful to use.
+        </p>
+        <p class="about-text">
+          I've collaborated with cross-functional teams at fast-moving product companies,
+          shipping features used by millions of users, and I thrive in environments that value
+          craftsmanship, performance, and thoughtful design.
+        </p>
+
+        <div class="row about-info g-4 mt-2">
+          <div class="col-sm-6">
+            <p><span class="info-label">Education:</span> B.Sc. Computer Science</p>
+            <p><span class="info-label">Location:</span> San Francisco, CA</p>
+          </div>
+          <div class="col-sm-6">
+            <p><span class="info-label">Freelance:</span> Available</p>
+            <p><span class="info-label">Languages:</span> English, Spanish</p>
+          </div>
+        </div>
+
+        <div class="row about-mv g-4 mt-3">
+          <div class="col-sm-6">
+            <div class="mv-card">
+              <i class="fa-solid fa-bullseye"></i>
+              <h4>Mission</h4>
+              <p>Build software that solves real problems with elegant simplicity.</p>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="mv-card">
+              <i class="fa-solid fa-eye"></i>
+              <h4>Vision</h4>
+              <p>Push the web forward through performance, accessibility, and design.</p>
+            </div>
+          </div>
+        </div>
+
+        <a href="#contact" class="btn btn-hire ripple mt-4">Let's Talk <i class="fa-solid fa-paper-plane ms-2"></i></a>
+      </div>
+    </div>
+
+    <!-- Statistics counter cards -->
+    <div class="row stats-row g-4 mt-5">
+      <div class="col-6 col-lg-3 reveal-up">
+        <div class="stat-card">
+          <i class="fa-solid fa-diagram-project"></i>
+          <h3><span class="counter" data-target="120">0</span>+</h3>
+          <p>Projects Completed</p>
+        </div>
+      </div>
+      <div class="col-6 col-lg-3 reveal-up" data-delay="100">
+        <div class="stat-card">
+          <i class="fa-solid fa-users"></i>
+          <h3><span class="counter" data-target="60">0</span>+</h3>
+          <p>Happy Clients</p>
+        </div>
+      </div>
+      <div class="col-6 col-lg-3 reveal-up" data-delay="200">
+        <div class="stat-card">
+          <i class="fa-solid fa-mug-hot"></i>
+          <h3><span class="counter" data-target="5">0</span>+</h3>
+          <p>Years Experience</p>
+        </div>
+      </div>
+      <div class="col-6 col-lg-3 reveal-up" data-delay="300">
+        <div class="stat-card">
+          <i class="fa-solid fa-trophy"></i>
+          <h3><span class="counter" data-target="15">0</span>+</h3>
+          <p>Awards Won</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     SKILLS SECTION
+========================================================= -->
+<section id="skills" class="section skills-section">
+  <div class="container">
+    <div class="text-center section-heading reveal-up">
+      <p class="section-tag">My Skills</p>
+      <h2 class="section-title">Technologies I Work With</h2>
+    </div>
+
+    <div class="row gy-4">
+      <!-- Progress-bar skills -->
+      <div class="col-lg-6 reveal-up">
+        <div class="skills-bars">
+          <div class="skill-bar-item">
+            <div class="skill-bar-top"><span>HTML5</span><span class="skill-pct">95%</span></div>
+            <div class="skill-progress"><span data-width="95"></span></div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-top"><span>CSS3</span><span class="skill-pct">92%</span></div>
+            <div class="skill-progress"><span data-width="92"></span></div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-top"><span>JavaScript</span><span class="skill-pct">90%</span></div>
+            <div class="skill-progress"><span data-width="90"></span></div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-top"><span>Bootstrap 5</span><span class="skill-pct">93%</span></div>
+            <div class="skill-progress"><span data-width="93"></span></div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-top"><span>Python</span><span class="skill-pct">85%</span></div>
+            <div class="skill-progress"><span data-width="85"></span></div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-top"><span>Git &amp; GitHub</span><span class="skill-pct">90%</span></div>
+            <div class="skill-progress"><span data-width="90"></span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Circular skill cards -->
+      <div class="col-lg-6">
+        <div class="row g-4">
+          <div class="col-6 col-md-4 reveal-up">
+            <div class="circle-skill-card">
+              <div class="circle-progress" data-percent="88">
+                <svg viewBox="0 0 120 120">
+                  <circle class="circle-bg" cx="60" cy="60" r="52"></circle>
+                  <circle class="circle-fill" cx="60" cy="60" r="52"></circle>
+                </svg>
+                <span class="circle-label">88%</span>
+              </div>
+              <p>Responsive Design</p>
+            </div>
+          </div>
+          <div class="col-6 col-md-4 reveal-up" data-delay="100">
+            <div class="circle-skill-card">
+              <div class="circle-progress" data-percent="90">
+                <svg viewBox="0 0 120 120">
+                  <circle class="circle-bg" cx="60" cy="60" r="52"></circle>
+                  <circle class="circle-fill" cx="60" cy="60" r="52"></circle>
+                </svg>
+                <span class="circle-label">90%</span>
+              </div>
+              <p>UI / UX Design</p>
+            </div>
+          </div>
+          <div class="col-6 col-md-4 reveal-up" data-delay="200">
+            <div class="circle-skill-card">
+              <div class="circle-progress" data-percent="95">
+                <svg viewBox="0 0 120 120">
+                  <circle class="circle-bg" cx="60" cy="60" r="52"></circle>
+                  <circle class="circle-fill" cx="60" cy="60" r="52"></circle>
+                </svg>
+                <span class="circle-label">95%</span>
+              </div>
+              <p>Soft Skills</p>
+            </div>
+          </div>
+          <div class="col-6 col-md-4 reveal-up" data-delay="300">
+            <div class="circle-skill-card">
+              <div class="circle-progress" data-percent="80">
+                <svg viewBox="0 0 120 120">
+                  <circle class="circle-bg" cx="60" cy="60" r="52"></circle>
+                  <circle class="circle-fill" cx="60" cy="60" r="52"></circle>
+                </svg>
+                <span class="circle-label">80%</span>
+              </div>
+              <p>Team Work</p>
+            </div>
+          </div>
+          <div class="col-6 col-md-4 reveal-up" data-delay="400">
+            <div class="circle-skill-card">
+              <div class="circle-progress" data-percent="85">
+                <svg viewBox="0 0 120 120">
+                  <circle class="circle-bg" cx="60" cy="60" r="52"></circle>
+                  <circle class="circle-fill" cx="60" cy="60" r="52"></circle>
+                </svg>
+                <span class="circle-label">85%</span>
+              </div>
+              <p>Problem Solving</p>
+            </div>
+          </div>
+          <div class="col-6 col-md-4 reveal-up" data-delay="500">
+            <div class="circle-skill-card">
+              <div class="circle-progress" data-percent="92">
+                <svg viewBox="0 0 120 120">
+                  <circle class="circle-bg" cx="60" cy="60" r="52"></circle>
+                  <circle class="circle-fill" cx="60" cy="60" r="52"></circle>
+                </svg>
+                <span class="circle-label">92%</span>
+              </div>
+              <p>Communication</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     SERVICES SECTION
+========================================================= -->
+<section id="services" class="section services-section">
+  <div class="container">
+    <div class="text-center section-heading reveal-up">
+      <p class="section-tag">What I Offer</p>
+      <h2 class="section-title">My Services</h2>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4 reveal-up">
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-code"></i></div>
+          <h3>Web Development</h3>
+          <p>Building robust, scalable web applications using modern frameworks and best practices.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 reveal-up" data-delay="100">
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
+          <h3>Responsive Websites</h3>
+          <p>Pixel-perfect layouts that adapt flawlessly across desktop, tablet, and mobile devices.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 reveal-up" data-delay="200">
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-rocket"></i></div>
+          <h3>Landing Pages</h3>
+          <p>High-converting landing pages engineered to capture attention and drive action.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 reveal-up">
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-briefcase"></i></div>
+          <h3>Portfolio Websites</h3>
+          <p>Custom personal and professional portfolios that showcase your best work beautifully.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 reveal-up" data-delay="100">
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-bug"></i></div>
+          <h3>Bug Fixing</h3>
+          <p>Fast, thorough debugging to keep your application stable, secure, and performant.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 reveal-up" data-delay="200">
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-gear"></i></div>
+          <h3>Website Maintenance</h3>
+          <p>Ongoing support, updates, and performance monitoring to keep your site running smoothly.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     PROJECTS SECTION
+========================================================= -->
+<section id="projects" class="section projects-section">
+  <div class="container">
+    <div class="text-center section-heading reveal-up">
+      <p class="section-tag">My Work</p>
+      <h2 class="section-title">Featured Projects</h2>
+    </div>
+
+    <!-- Filter categories -->
+    <div class="project-filters reveal-up">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="web">Web Apps</button>
+      <button class="filter-btn" data-filter="landing">Landing Pages</button>
+      <button class="filter-btn" data-filter="ui">UI / UX</button>
+    </div>
+
+    <div class="row g-4" id="projectsGrid">
+
+      <div class="col-md-6 col-lg-4 project-item reveal-up" data-category="web">
+        <div class="project-card">
+          <div class="project-img">
+            <div class="project-img-placeholder proj-grad-1"><i class="fa-solid fa-chart-line"></i></div>
+            <div class="project-overlay">
+              <a href="#" class="project-link-btn" aria-label="View Live Demo"><i class="fa-solid fa-eye"></i></a>
+              <a href="#" class="project-link-btn" aria-label="View GitHub Repo"><i class="fa-brands fa-github"></i></a>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>MarketPulse Dashboard</h3>
+            <p>A real-time analytics dashboard for tracking market data and trends.</p>
+            <div class="project-tags">
+              <span>React-free JS</span><span>Node.js</span><span>Chart.js</span>
+            </div>
+            <div class="project-links">
+              <a href="#"><i class="fa-brands fa-github"></i> Code</a>
+              <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 project-item reveal-up" data-category="landing" data-delay="100">
+        <div class="project-card">
+          <div class="project-img">
+            <div class="project-img-placeholder proj-grad-2"><i class="fa-solid fa-rocket"></i></div>
+            <div class="project-overlay">
+              <a href="#" class="project-link-btn" aria-label="View Live Demo"><i class="fa-solid fa-eye"></i></a>
+              <a href="#" class="project-link-btn" aria-label="View GitHub Repo"><i class="fa-brands fa-github"></i></a>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>LaunchPad SaaS</h3>
+            <p>A conversion-focused landing page for a SaaS product launch campaign.</p>
+            <div class="project-tags">
+              <span>HTML5</span><span>CSS3</span><span>Bootstrap</span>
+            </div>
+            <div class="project-links">
+              <a href="#"><i class="fa-brands fa-github"></i> Code</a>
+              <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 project-item reveal-up" data-category="ui" data-delay="200">
+        <div class="project-card">
+          <div class="project-img">
+            <div class="project-img-placeholder proj-grad-3"><i class="fa-solid fa-palette"></i></div>
+            <div class="project-overlay">
+              <a href="#" class="project-link-btn" aria-label="View Live Demo"><i class="fa-solid fa-eye"></i></a>
+              <a href="#" class="project-link-btn" aria-label="View GitHub Repo"><i class="fa-brands fa-github"></i></a>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>FinTrack Mobile UI</h3>
+            <p>A sleek finance-tracking mobile app interface with a focus on clarity.</p>
+            <div class="project-tags">
+              <span>Figma</span><span>UI Design</span><span>Prototyping</span>
+            </div>
+            <div class="project-links">
+              <a href="#"><i class="fa-brands fa-github"></i> Code</a>
+              <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 project-item reveal-up" data-category="web">
+        <div class="project-card">
+          <div class="project-img">
+            <div class="project-img-placeholder proj-grad-4"><i class="fa-solid fa-cart-shopping"></i></div>
+            <div class="project-overlay">
+              <a href="#" class="project-link-btn" aria-label="View Live Demo"><i class="fa-solid fa-eye"></i></a>
+              <a href="#" class="project-link-btn" aria-label="View GitHub Repo"><i class="fa-brands fa-github"></i></a>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>ShopCart Storefront</h3>
+            <p>A full-featured e-commerce storefront with cart, checkout, and admin panel.</p>
+            <div class="project-tags">
+              <span>Python</span><span>PostgreSQL</span><span>Bootstrap</span>
+            </div>
+            <div class="project-links">
+              <a href="#"><i class="fa-brands fa-github"></i> Code</a>
+              <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 project-item reveal-up" data-category="landing" data-delay="100">
+        <div class="project-card">
+          <div class="project-img">
+            <div class="project-img-placeholder proj-grad-5"><i class="fa-solid fa-mobile-screen"></i></div>
+            <div class="project-overlay">
+              <a href="#" class="project-link-btn" aria-label="View Live Demo"><i class="fa-solid fa-eye"></i></a>
+              <a href="#" class="project-link-btn" aria-label="View GitHub Repo"><i class="fa-brands fa-github"></i></a>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>AppLanding Studio</h3>
+            <p>A modern mobile app landing page with animated feature showcases.</p>
+            <div class="project-tags">
+              <span>JavaScript</span><span>GSAP</span><span>CSS3</span>
+            </div>
+            <div class="project-links">
+              <a href="#"><i class="fa-brands fa-github"></i> Code</a>
+              <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 project-item reveal-up" data-category="ui" data-delay="200">
+        <div class="project-card">
+          <div class="project-img">
+            <div class="project-img-placeholder proj-grad-6"><i class="fa-solid fa-pen-ruler"></i></div>
+            <div class="project-overlay">
+              <a href="#" class="project-link-btn" aria-label="View Live Demo"><i class="fa-solid fa-eye"></i></a>
+              <a href="#" class="project-link-btn" aria-label="View GitHub Repo"><i class="fa-brands fa-github"></i></a>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>DesignSystem Kit</h3>
+            <p>A comprehensive design system and component library for consistent branding.</p>
+            <div class="project-tags">
+              <span>Figma</span><span>Design Tokens</span><span>Storybook</span>
+            </div>
+            <div class="project-links">
+              <a href="#"><i class="fa-brands fa-github"></i> Code</a>
+              <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     EXPERIENCE TIMELINE SECTION
+========================================================= -->
+<section id="experience" class="section experience-section">
+  <div class="container">
+    <div class="text-center section-heading reveal-up">
+      <p class="section-tag">My Journey</p>
+      <h2 class="section-title">Experience &amp; Education</h2>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-item reveal-up">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <span class="timeline-date">2023 — Present</span>
+          <h3>Senior Software Engineer</h3>
+          <h4>TechNova Inc.</h4>
+          <p>Leading a team of engineers building scalable cloud-native applications serving millions of users.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal-up" data-delay="100">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <span class="timeline-date">2021 — 2023</span>
+          <h3>Full Stack Developer</h3>
+          <h4>BrightWorks Digital</h4>
+          <p>Developed and maintained client-facing web applications using modern JavaScript and Python stacks.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal-up" data-delay="200">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <span class="timeline-date">2020</span>
+          <h3>Certified UI/UX Designer</h3>
+          <h4>Google UX Design Certificate</h4>
+          <p>Completed professional certification covering user research, wireframing, and prototyping.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal-up" data-delay="300">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <span class="timeline-date">2016 — 2020</span>
+          <h3>B.Sc. Computer Science</h3>
+          <h4>University of California</h4>
+          <p>Graduated with honors, focusing on software engineering and human-computer interaction.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     TESTIMONIALS SECTION
+========================================================= -->
+<section id="testimonials" class="section testimonials-section">
+  <div class="container">
+    <div class="text-center section-heading reveal-up">
+      <p class="section-tag">Testimonials</p>
+      <h2 class="section-title">What Clients Say</h2>
+    </div>
+
+    <div id="testimonialCarousel" class="carousel slide reveal-up" data-bs-ride="carousel">
+      <div class="carousel-inner">
+
+        <div class="carousel-item active">
+          <div class="testimonial-card mx-auto">
+            <div class="testimonial-avatar"><i class="fa-solid fa-user"></i></div>
+            <div class="testimonial-rating">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="testimonial-text">"Ansar delivered our platform ahead of schedule with exceptional attention to detail. The code quality and communication were outstanding throughout."</p>
+            <h4 class="testimonial-name">Sarah Chen</h4>
+            <span class="testimonial-role">Product Manager, NovaTech</span>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="testimonial-card mx-auto">
+            <div class="testimonial-avatar"><i class="fa-solid fa-user"></i></div>
+            <div class="testimonial-rating">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="testimonial-text">"One of the best developers we've worked with. Ansar understood our vision immediately and turned it into a beautiful, functional product."</p>
+            <h4 class="testimonial-name">James Patterson</h4>
+            <span class="testimonial-role">CEO, StartupHub</span>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="testimonial-card mx-auto">
+            <div class="testimonial-avatar"><i class="fa-solid fa-user"></i></div>
+            <div class="testimonial-rating">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+            </div>
+            <p class="testimonial-text">"Professional, responsive, and incredibly skilled. Our website's performance improved dramatically after Ansar's optimization work."</p>
+            <h4 class="testimonial-name">Maria Gonzalez</h4>
+            <span class="testimonial-role">Marketing Director, Bloom Co.</span>
+          </div>
+        </div>
+
+      </div>
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+        <span class="carousel-nav-icon"><i class="fa-solid fa-chevron-left"></i></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+        <span class="carousel-nav-icon"><i class="fa-solid fa-chevron-right"></i></span>
+      </button>
+
+      <div class="carousel-indicators-custom">
+        <button data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="active"></button>
+        <button data-bs-target="#testimonialCarousel" data-bs-slide-to="1"></button>
+        <button data-bs-target="#testimonialCarousel" data-bs-slide-to="2"></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     CONTACT SECTION
+========================================================= -->
+<section id="contact" class="section contact-section">
+  <div class="container">
+    <div class="text-center section-heading reveal-up">
+      <p class="section-tag">Get In Touch</p>
+      <h2 class="section-title">Contact Me</h2>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-lg-5 reveal-up">
+        <div class="contact-info-card">
+          <div class="contact-info-item">
+            <div class="contact-info-icon"><i class="fa-solid fa-envelope"></i></div>
+            <div>
+              <h4>Email</h4>
+              <p>hello@ansarahmad.dev</p>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-icon"><i class="fa-solid fa-phone"></i></div>
+            <div>
+              <h4>Phone</h4>
+              <p>+1 (415) 555-0198</p>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-icon"><i class="fa-solid fa-location-dot"></i></div>
+            <div>
+              <h4>Location</h4>
+              <p>San Francisco, CA</p>
+            </div>
+          </div>
+
+          <div class="contact-social">
+            <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          </div>
+
+          <!-- Google Map Placeholder -->
+          <div class="map-placeholder">
+            <i class="fa-solid fa-map-location-dot"></i>
+            <span>Map Preview — San Francisco, CA</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-7 reveal-up" data-delay="150">
+        <form id="contactForm" class="contact-form" novalidate>
+          <div class="row g-3">
+            <div class="col-sm-6">
+              <label for="cf-name">Name</label>
+              <input type="text" id="cf-name" name="name" placeholder="Your full name" required />
+              <span class="cf-error" id="cf-name-error"></span>
+            </div>
+            <div class="col-sm-6">
+              <label for="cf-email">Email</label>
+              <input type="email" id="cf-email" name="email" placeholder="you@example.com" required />
+              <span class="cf-error" id="cf-email-error"></span>
+            </div>
+            <div class="col-12">
+              <label for="cf-subject">Subject</label>
+              <input type="text" id="cf-subject" name="subject" placeholder="Project inquiry" required />
+              <span class="cf-error" id="cf-subject-error"></span>
+            </div>
+            <div class="col-12">
+              <label for="cf-message">Message</label>
+              <textarea id="cf-message" name="message" rows="6" placeholder="Tell me about your project..." required></textarea>
+              <span class="cf-error" id="cf-message-error"></span>
+            </div>
+            <div class="col-12">
+              <button type="submit" class="btn btn-hire ripple w-100 w-sm-auto">
+                <span id="cf-submit-text">Send Message</span> <i class="fa-solid fa-paper-plane ms-2"></i>
+              </button>
+              <p class="cf-status" id="cf-status" role="status" aria-live="polite"></p>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+<footer class="footer">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-4">
+        <a class="footer-logo" href="#home">Ansar<span class="text-gradient">Ahmad</span><span class="brand-dot">.</span></a>
+        <p class="footer-about">
+          Senior Full Stack Engineer crafting fast, elegant, and scalable digital products
+          for startups and enterprise teams.
+        </p>
+        <div class="footer-social">
+          <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+      </div>
+
+      <div class="col-6 col-lg-2">
+        <h4 class="footer-heading">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="col-6 col-lg-3">
+        <h4 class="footer-heading">Services</h4>
+        <ul class="footer-links">
+          <li><a href="#services">Web Development</a></li>
+          <li><a href="#services">Responsive Websites</a></li>
+          <li><a href="#services">Landing Pages</a></li>
+          <li><a href="#services">Bug Fixing</a></li>
+          <li><a href="#services">Maintenance</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-3">
+        <h4 class="footer-heading">Contact</h4>
+        <ul class="footer-links">
+          <li><i class="fa-solid fa-envelope me-2"></i>hello@ansarahmad.dev</li>
+          <li><i class="fa-solid fa-phone me-2"></i>+1 (415) 555-0198</li>
+          <li><i class="fa-solid fa-location-dot me-2"></i>San Francisco, CA</li>
+        </ul>
+      </div>
+    </div>
+
+    <hr class="footer-divider" />
+
+    <div class="footer-bottom">
+      <p>&copy; <span id="footer-year"></span> Ansar Ahmad. All Rights Reserved.</p>
+      <p>Designed &amp; Built with <i class="fa-solid fa-heart text-danger"></i> by Ansar Ahmad</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to top button -->
+<button id="backToTop" class="back-to-top" aria-label="Back to top">
+  <i class="fa-solid fa-arrow-up"></i>
+</button>
+
+<!-- Floating action button -->
+<div class="fab-container">
+  <button class="fab-main" id="fabMain" aria-label="Quick actions">
+    <i class="fa-solid fa-comment-dots"></i>
+  </button>
+  <div class="fab-options" id="fabOptions">
+    <a href="#contact" aria-label="Contact"><i class="fa-solid fa-envelope"></i></a>
+    <a href="#" aria-label="Call"><i class="fa-solid fa-phone"></i></a>
+    <a href="#" aria-label="Chat on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+  </div>
+</div>
+
+<!-- Bootstrap 5 JS Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Custom Script -->
+<script src="script.js"></script>
+</body>
+</html>
