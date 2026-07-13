@@ -1,11 +1,4 @@
-/* =============================================================
-   PORTFOLIO — MAIN JAVASCRIPT
-   Vanilla JS only. Handles: loading screen, scroll progress,
-   custom cursor, particles background, navbar scroll state,
-   mobile menu, dark mode toggle, typing effect, counters,
-   scroll reveal, skill bars, circular skills, project filters,
-   ripple buttons, back-to-top, FAB, and contact form validation.
-   ============================================================= */
+import { db, collection, addDoc } from "./firebase.js";
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -432,28 +425,42 @@ document.addEventListener('DOMContentLoaded', () => {
     cfFields[key].el.addEventListener('blur', () => validateCfField(key));
   });
 
-  contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
+  contactForm.addEventListener("submit", async (e) => {
+  e.preventDefault();
 
-    const results = Object.keys(cfFields).map(validateCfField);
-    const allValid = results.every(Boolean);
+  const results = Object.keys(cfFields).map(validateCfField);
+  const allValid = results.every(Boolean);
 
-    if (!allValid) {
-      cfStatus.textContent = 'Please fix the errors above before sending.';
-      cfStatus.className = 'cf-status error';
-      return;
-    }
+  if (!allValid) {
+    cfStatus.textContent = "Please fix the errors above before sending.";
+    cfStatus.className = "cf-status error";
+    return;
+  }
 
-    const submitText = document.getElementById('cf-submit-text');
-    submitText.textContent = 'Sending...';
+  const submitText = document.getElementById("cf-submit-text");
+  submitText.textContent = "Sending...";
 
-    setTimeout(() => {
-      cfStatus.textContent = "Message sent successfully! I'll get back to you soon.";
-      cfStatus.className = 'cf-status success';
-      submitText.textContent = 'Send Message';
-      contactForm.reset();
-    }, 900);
-  });
+  try {
+    await addDoc(collection(db, "contacts"), {
+      name: cfFields.name.el.value.trim(),
+      email: cfFields.email.el.value.trim(),
+      subject: cfFields.subject.el.value.trim(),
+      message: cfFields.message.el.value.trim(),
+      createdAt: new Date()
+    });
+
+    cfStatus.textContent = "Message sent successfully!";
+    cfStatus.className = "cf-status success";
+    submitText.textContent = "Send Message";
+    contactForm.reset();
+
+  } catch (error) {
+    console.error(error);
+    cfStatus.textContent = "Failed to send message.";
+    cfStatus.className = "cf-status error";
+    submitText.textContent = "Send Message";
+  }
+});
 
   /* ---------------------------------------------------------
      17. FOOTER YEAR
